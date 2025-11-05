@@ -9,7 +9,20 @@ from datasets import load_dataset
 from sklearn.metrics import classification_report
  
 # Load our data
+
+
+ 
 def evaluate_performance(y_true, y_pred):
+  """Precision measures how many of the items found are relevant,
+which indicates the accuracy of the relevant results.
+Recall refers to how many relevant classes were found, which
+indicates its ability to find all relevant results.
+Accuracy refers to how many correct predictions the model makes
+out of all predictions, which indicates the overall correctness of the
+model.
+The F1 score balances both precision and recall to create a model’s
+overall performance"""
+ 
   performance = classification_report(
   y_true, y_pred,
   target_names=["Negative Review", "Positive Review"]
